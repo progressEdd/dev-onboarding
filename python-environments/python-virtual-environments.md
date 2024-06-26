@@ -1,3 +1,3 @@
-![](images/python-virtual-environments/raw/20240626141834.png)
-![](images/python-virtual-environments/raw/20240626141945.png)
-![](images/python-virtual-environments/raw/20240626142042.png)
+![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
+![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
+![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
