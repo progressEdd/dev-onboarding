@@ -1,5 +1,5 @@
 # Setting up poetry
-This guide assumes that VSCode/VSCodium has been installed to your system
+This guide assumes that VSCode/VSCodium has been installed to your system. A sample `pyproject.toml` and `poetry.lock` file has been provided for reference
 
 ## Installing in your base environment
 Follow these instructions to use poetry on your base environment.
