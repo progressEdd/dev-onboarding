@@ -83,6 +83,3 @@ Git is a version control system used in software development environments and or
        git pull
        ```
         - git pull will grab the remote changes and attempt to merge it into your current branch. If you just wish to get updates, a `git fetch` will cache the new changes. You'll need to `checkout` to the individual branches and `merge` it with the cached updates. 
-
-## Glossary
-- 
