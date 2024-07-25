@@ -61,7 +61,12 @@ Git is a version control system used in software development environments and or
           git commit -m "added new feature to function a"
         ```
        - Feel free to replace the message `"added new feature to function a"` with a memorable message for your self. The quotes will allow spaces
-5. Push changes
+5. Push the local changes to remote
+  - Run 
+    - ```
+      git push origin $branch-name
+      ```
+      - Replace `$branch-name` with the name of the current branch. Note: some repositories will restrict pushing to the master/main (repo home page).
 6. Submit Pull Requests for review
 7. Merge changes from remote
 
