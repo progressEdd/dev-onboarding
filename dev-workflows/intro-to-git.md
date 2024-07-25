@@ -38,7 +38,7 @@ Git is a version control system used in software development environments and or
         git add $file-name
         ```
         - Replace `$file-name` with the name of a file
-        - If you wish to add all modified files from the git status, the `-A` command will add all changes to files in a directory. If you wish to specify a specific file, you'll need to make sure to give the path relative (including subfolders if you create new folders) to the repo directory.
+        - If you wish to add all modified files from the git status, the `-A` command will add all changes to files in a directory. If you wish to specify a specific file, you'll need to make sure to give the path relative (including subfolders if you create new folders) to the repo directory
           - You can find examples of the available commands by running `git help add`. Use the arrow keys to scroll. If you done reading the documentation type `q`
             <blockquote>
             ...
@@ -66,9 +66,23 @@ Git is a version control system used in software development environments and or
     - ```
       git push origin $branch-name
       ```
-      - Replace `$branch-name` with the name of the current branch. Note: some repositories will restrict pushing to the master/main (repo home page).
+      - `origin` is your local copy of the repository. When we `push` we are sending it to the remote (GitHub/GitLab)
+      - Replace `$branch-name` with the name of the current branch. Note: some repositories will restrict pushing to the master/main (repo home page)
 6. Submit Pull Requests for review
+  - When git has successfully pushed to a repo, you'll be prompted to create a pull request with a link. You can open the link or select the from the pull requests tab on the repo. If your push is recent, you can also click on the `Compare & pull request` The interface will vary for each website
+    - ![](../supporting_files/images/intro-to-git/20240725163342.png)
+  - Follow the steps in open a pull request tab. Some organizations will require a review and sign off from an admin
 7. Merge changes from remote
+  - If your pull request is accepted, you'll need to update your local repo with the latest. Run the following commands
+    1. ```
+       git status
+       ```
+      - Check if you have any uncommitted changes. If there are, follow the instructions for adding commits
+      - If you wish to cache your local changes, a `git stash` will cache the changes. To apply the stashed changes to the updated code, run `git stash apply`
+    2. ```
+       git pull
+       ```
+        - git pull will grab the remote changes and attempt to merge it into your current branch. If you just wish to get updates, a `git fetch` will cache the new changes. You'll need to `checkout` to the individual branches and `merge` it with the cached updates. 
 
 ## Glossary
 - 
