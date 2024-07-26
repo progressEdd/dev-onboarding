@@ -1,8 +1,21 @@
 # Introduction to git
+Chatgpt 4o helped write the overview, why use git, and glossary. If there are any terms or instructions that aren't clear or need additional explanations, feel free to copy the section and start a chat with a llm. As always, validate the suggestions using the internet or your seniors.
+
+## Overview
+Git is a powerful version control system that allows developers to track changes in their code and collaborate with others. It helps manage the evolution of projects, providing a history of changes, facilitating teamwork, and enabling efficient handling of different versions of a project.
+
+## Why Use Git?
+Imagine working on a project where you need to track every change, collaborate with multiple people, and ensure nothing gets lost. Git helps you by:
+
+-   Keeping a detailed history of changes.
+-   Allowing multiple people to work on the same project without conflicts.
+-   Providing tools to revert to previous versions if something goes wrong.
+
 ## Background
-Git is a version control system used in software development environments and organizations. Version control software aims to keep track of changes in code and other files while collaborating within a development team. Websites such as [GitHub](https://github.com/) and [Gitlab](https://about.gitlab.com/) host and maintain code repos.
+Git is a version control system used in software development environments and organizations. Version control software aims to keep track of changes in code and other files while collaborating within a development team. Websites such as [GitHub](https://github.com/) and [Gitlab](https://about.gitlab.com/) host and maintain code repos. 
 
 ## Common workflow
+Before running any of the commands within this workflow, please ensure that git is installed. Follow the instructions on [git textbook](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 1. Clone an existing repo
     - I recommend using the vscodium/code terminal to clone repos as the terminal history is stored within your workspace. You can use the following command in any terminal within a folder you wish to store the repo within, just make sure to navigate to the desired directory. 
         ```
@@ -83,3 +96,34 @@ Git is a version control system used in software development environments and or
        git pull
        ```
         - git pull will grab the remote changes and attempt to merge it into your current branch. If you just wish to get updates, a `git fetch` will cache the new changes. You'll need to `checkout` to the individual branches and `merge` it with the cached updates. 
+
+## Terminology
+
+- `git`: A command-line application to manage and track file changes for a given project repository. For more information, I recommend reading the [git textbook](https://git-scm.com/book/en/v2).
+  - `clone`: A git parameter used to download a repository.
+  - `checkout`: A git parameter used to open a specific branch.
+    - `branch`: A term used to refer to a particular version of the code repository.
+  - `add`: A git parameter used to stage changes in your working directory for the next commit. It tells git that you want to include updates to a particular file in the next commit.
+    - `stage`: The phase in git where changes are added to the index (or staging area) in preparation for a commit. This is done using the `git add` command. Staging allows you to prepare a snapshot of the changes you want to include in your next commit.
+  - `commit`: A git parameter used to save and track changes. It creates a snapshot of the current changes in the repository.
+    - `commit message`: A message associated with a commit that describes the changes made. It's important for understanding the history of changes in the repository.
+  - `push`: A git parameter used to upload local repository content to a remote repository. It transfers commits from your local repository to a remote one.
+    - `remote`: A common repository that all team members use to exchange their changes. It’s typically hosted on a server like GitHub or GitLab.
+    - `origin`: The default name git gives to the server you cloned from. It serves as a shorthand for the remote repository URL.
+  - `pull`: A git parameter used to fetch and integrate changes from a remote repository to your local repository.
+  - `fetch`: A git parameter used to download objects and refs from another repository.
+  - `merge`: A git parameter used to combine multiple sequences of commits into one unified history. It typically integrates changes from a different branch into your current branch.
+  - `rebase`: A git parameter used to move or combine a sequence of commits to a new base commit. This can be used to synchronize a feature branch with an upstream branch.
+    - `upstream`: The main repository that is considered the central repository from which to pull updates. It’s usually the repository from which your local repository was cloned.
+  - `stash`: A git parameter used to temporarily save changes you don't want to commit immediately. It allows you to clean your working directory without committing.
+  - `status`: A git command used to display the state of the working directory and the staging area. It shows which changes have been staged, which haven't, and which files aren't being tracked by git.
+  - `diff`: A git parameter used to show the differences between commits, commit and working tree, etc.
+  - `log`: A git parameter used to show the commit logs.
+
+- Additional Developer Terms:
+  - `repository (repo)`: A storage location for software packages, often used to refer to a directory or storage space where your project resides.
+  - `HEAD`: A reference to the last commit in the currently checked-out branch.
+  - `conflict`: Occurs when different changes in different branches interfere with each other and need to be resolved manually.
+  - `pull request (PR)`: A method of submitting contributions to a project. It allows you to notify team members that you have completed a feature or fix and it is ready to be reviewed.
+  - `fork`: A personal copy of someone else's project. It allows you to freely experiment with changes without affecting the original project.
+  - `origin`: The original repository from which you have cloned your local repository.
