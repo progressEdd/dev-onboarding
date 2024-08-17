@@ -154,6 +154,15 @@ If you work in an environment that uses multiple ssh keys and logins, the follow
         insteadOf = git@github.com/
         ```
         - note: the `$primary-account-name` will change. For personal repos, it will just be the user's github account name. For organizations, it will be the org name within the `Organizations` tab of github
+        - for regular non-enterprise github accounts, you'll want to make sure the configuration follows this structure
+          - ```
+                [user]
+                email = your.email@example.com
+
+                [url "git@github.com:"]
+                    insteadOf = https://github.com/
+
+            ```
 5.  Repeat the previous step, but replace the `primary` steps with `secondary` for the folders and accounts
 6.  Write a shell function to automatically change your ssh keys when you initiate a `git` + `clone`, `fetch`, `pull`, or `push`. I use [fish shell](https://fishshell.com/), so adapt this function for your respective shell
     1.  Navigate and open to the fish config file with your preferred text editor, for m, it is stored in `~/.config/fish/config.fish`
