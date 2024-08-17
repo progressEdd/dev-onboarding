@@ -230,11 +230,12 @@ If you work in an environment that uses multiple ssh keys and logins, the follow
             end
 
         ```
-    3.  All active terminals using the following command `source ~/.config/fish/config.fish`
+    3.  Reload all active terminals using the following command `source ~/.config/fish/config.fish`
     4.  Navigate to a repo within the primary directory you initialized and run a `git` + `clone`, `fetch`, `pull`, or `push`
     5.  Confirm that the correct ssh key is being used. If not use the following commands to debug further:
         -   list all commands active keys using `ssh-add -l`
         -   debug git ssh command outputs using `GIT_SSH_COMMAND="ssh -vvv" git pull`
         -   test the ssh connections `ssh -T git@github.com`. Note this will be with the key that was previously activated, Run another `git` + `clone`, `fetch`, `pull`, or `push` to reset it
+        -   if you encounter any issues with the VS Codium/Code terminals, make sure to kill the terminal and start a new one
 7.  You should be all set!
 
