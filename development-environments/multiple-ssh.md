@@ -28,12 +28,11 @@ Follow the guides from the github documenation page [Generating a new SSH key an
     > Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]
     ```
 2. Activate the ssh agent. These commands will change for your platform
-    - linux/mac (bash)
+    - linux/mac
         ```
         $ eval "$(ssh-agent -s)"
         > Agent pid 59566
         ```
-      - for those who use fish shell, remove the `$`
     - windows
         ```
         # start the ssh-agent in the background
@@ -154,15 +153,6 @@ If you work in an environment that uses multiple ssh keys and logins, the follow
         insteadOf = git@github.com/
         ```
         - note: the `$primary-account-name` will change. For personal repos, it will just be the user's github account name. For organizations, it will be the org name within the `Organizations` tab of github
-        - for regular non-enterprise github accounts, you'll want to make sure the configuration follows this structure
-            ```
-                [user]
-                email = your.email@example.com
-
-                [url "git@github.com:"]
-                    insteadOf = https://github.com/
-
-            ```
 5.  Repeat the previous step, but replace the `primary` steps with `secondary` for the folders and accounts
 6.  Write a shell function to automatically change your ssh keys when you initiate a `git` + `clone`, `fetch`, `pull`, or `push`. I use [fish shell](https://fishshell.com/), so adapt this function for your respective shell
     1.  Navigate and open to the fish config file with your preferred text editor, for m, it is stored in `~/.config/fish/config.fish`
@@ -230,11 +220,12 @@ If you work in an environment that uses multiple ssh keys and logins, the follow
             end
 
         ```
-    3.  All active terminals using the following command `source ~/.config/fish/config.fish`
+    3.  Reload all active terminals using the following command `source ~/.config/fish/config.fish`
     4.  Navigate to a repo within the primary directory you initialized and run a `git` + `clone`, `fetch`, `pull`, or `push`
     5.  Confirm that the correct ssh key is being used. If not use the following commands to debug further:
         -   list all commands active keys using `ssh-add -l`
         -   debug git ssh command outputs using `GIT_SSH_COMMAND="ssh -vvv" git pull`
         -   test the ssh connections `ssh -T git@github.com`. Note this will be with the key that was previously activated, Run another `git` + `clone`, `fetch`, `pull`, or `push` to reset it
+        -   if you encounter any issues with the VS Codium/Code terminals, make sure to kill the terminal and start a new one
 7.  You should be all set!
 
