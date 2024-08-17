@@ -28,11 +28,12 @@ Follow the guides from the github documenation page [Generating a new SSH key an
     > Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]
     ```
 2. Activate the ssh agent. These commands will change for your platform
-    - linux/mac
+    - linux/mac (bash)
         ```
         $ eval "$(ssh-agent -s)"
         > Agent pid 59566
         ```
+      - for those who use fish shell, remove the `$`
     - windows
         ```
         # start the ssh-agent in the background
