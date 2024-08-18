@@ -1,27 +1,7 @@
 # Setting up poetry
 This guide assumes that VSCode/VSCodium has been installed to your system
 
-## Installing in your base environment
-Follow these instructions to use poetry on your base environment.
-1. Open a terminal within VSCode
-2. Install poetry to your desired python environment with pip using the following command
-    ```
-    pip install poetry 
-    ```
-3. Configure poetry to dump the .venv within to your local directory
-    ```
-    poetry config virtualenvs.in-project true
-    ```
-4. Install the poetry packages, ensure that the `pyproject.tmol` file is accessible for your terminal
-    ```
-    poetry install --no-root
-    ```
-5. Wait for the packages to install
-6. When using notebooks make sure to select the local .venv for your python interpreter
-    1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-    2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-    3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
-7. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
+## Installing poetry following the developer's best practices
 
 ## Installing poetry within a conda environment
 1. Open a terminal within VSCode
@@ -57,6 +37,29 @@ Follow these instructions to use poetry on your base environment.
     2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
     3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
 9. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
+
+## Installing in your base environment
+Follow these instructions to use poetry on your base environment.
+1. Open a terminal within VSCode
+2. Install poetry to your desired python environment with pip using the following command
+    ```
+    pip install poetry 
+    ```
+3. Configure poetry to dump the .venv within to your local directory
+    ```
+    poetry config virtualenvs.in-project true
+    ```
+4. Install the poetry packages, ensure that the `pyproject.tmol` file is accessible for your terminal
+    ```
+    poetry install --no-root
+    ```
+5. Wait for the packages to install
+6. When using notebooks make sure to select the local .venv for your python interpreter
+    1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
+    2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
+    3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+7. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
+
 
 ## Additional poetry notes
 - Poetry tracks package versions through the `pyproject.toml` and `poetry.lock` files, if new packages need to be installed, use the following command replace `$pip-package-name`
