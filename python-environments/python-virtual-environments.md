@@ -186,25 +186,25 @@ This guide assumes that VSCode/VSCodium has been installed to your system
         pipx ensurepath
         sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
         ```
-    - Fedora:
-        ```
-        sudo dnf install pipx
-        pipx ensurepath
-        sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
-        ```
-    - Arch:
-        ```
-        sudo pacman -S python-pipx
-        pipx ensurepath
-        sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
-        ```
-    - Using `pip` on other distributions:
-        ```
-        python3 -m pip install --user pipx
-        python3 -m pipx ensurepath
-        sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
-        ```
-        - Upgrade pipx with `python3 -m pip install --user --upgrade pipx`.
+      - Fedora:
+          ```
+          sudo dnf install pipx
+          pipx ensurepath
+          sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+          ```
+      - Arch:
+          ```
+          sudo pacman -S python-pipx
+          pipx ensurepath
+          sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+          ```
+      - Using `pip` on other distributions:
+          ```
+          python3 -m pip install --user pipx
+          python3 -m pipx ensurepath
+          sudo pipx ensurepath --global # optional to allow pipx actions with --global argument
+          ```
+          - Upgrade pipx with `python3 -m pip install --user --upgrade pipx`.
    - MacOS
      ```
         brew install pipx
@@ -236,15 +236,15 @@ This guide assumes that VSCode/VSCodium has been installed to your system
         ```
             pyenv install 3.12.5
         ``` 
-   5. Set the desired python version for the project 
+   4. Set the desired python version for the project 
         ```
             pyenv local 3.12.5
         ```   
 4. setup poetry
    1. Configure poetry to dump the .venv within to your local directory
-    ```
-    poetry config virtualenvs.in-project true
-    ```
+        ```
+        poetry config virtualenvs.in-project true
+        ```
    2. Install the poetry packages, ensure that the `pyproject.toml` file is accessible for your terminal. 
        ```
        poetry install --no-root
