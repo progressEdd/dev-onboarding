@@ -240,7 +240,22 @@ This guide assumes that VSCode/VSCodium has been installed to your system
         ```
             pyenv local 3.12.5
         ```   
-   6. 
+4. setup poetry
+   1. Configure poetry to dump the .venv within to your local directory
+    ```
+    poetry config virtualenvs.in-project true
+    ```
+   2. Install the poetry packages, ensure that the `pyproject.toml` file is accessible for your terminal. 
+       ```
+       poetry install --no-root
+       ```
+       - note: the `--no-root` flag will just install the required packages and avoid building the packages 
+   3. wait for the packages to install
+   4. When using notebooks make sure to select the local .venv for your python interpreter
+       1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
+       2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
+       3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+   5. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
 
 ## Installing poetry within a conda environment
 1. Open a terminal within VSCode
