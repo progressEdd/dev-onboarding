@@ -1,15 +1,9 @@
-[tool.poetry]
+[project]
 name = "dev-env-py"
 version = "0.1.0"
 description = "example project to getting poetry setup within a conda environment"
-authors = ["progressEdd"]
-license = "GPL-V2"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=6.29.5",
+]
