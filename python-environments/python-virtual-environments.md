@@ -1,5 +1,21 @@
-# Setting up poetry
+# Setting up python environments
 This guide assumes that VSCode/VSCodium has been installed to your system
+
+## Installing UV
+1. Navigate to the following [Getting started page](https://docs.astral.sh/uv/#getting-started)
+2. Run the installer script for your platform
+3. Initialize or build your project
+   - If you are working on a new project, run `uv init $project_name`
+     - replace `$project_name` with a directory name
+   - If you have been given a project with a `pyproject.toml`, run `uv sync` within the same directory as the `pyproject.toml` file
+4. If vscode/jupyter python interpreter to the`.venv` created by uv
+    - When using notebooks make sure to select the local .venv for your python interpreter
+       1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
+       2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
+       3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+5. Install or declare your UV dependencies
+    - instead of `pip install $package_name` you run `uv add $package_name`. Use the `uv add` when possible as it will automatically update the `pyproject.toml`
+    - a sample file has been provided in [`pyproject.toml`](../python-environments/pyproject.toml) 
 
 ## Installing poetry following the developer's best practices
 1. install pyenv
