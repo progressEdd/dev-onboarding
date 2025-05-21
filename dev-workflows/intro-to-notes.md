@@ -30,7 +30,7 @@ Foam is works with markdown. One of the features I use regularly is the daily no
 5. Foam will now automatically a markdown file for today. For formatting, feel free to refer to the [[intro-to-notes#Markdown tips and tricks]]
     - ![](../supporting_files/images/intro-to-notes/20240731165058.png)
     - Make sure to save every so often, as VS will cache the file. If you sync with OneDrive, your notes won't be uploaded if you do not save
-6. By default the vs-dev profile puts all notes in the 00-dev-log folder. If the folder does not exist, it will auto create it
+6. By default the vs-dev profile puts all notes in the `00-dev-log folder`. If the folder does not exist, it will auto create it
 
 ## Foam tips and tricks
 - These are not the only tips and tricks, refer to the documentation for other [features](https://foambubble.github.io/foam/#features)
