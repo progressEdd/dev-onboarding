@@ -30,6 +30,7 @@ Foam is works with markdown. One of the features I use regularly is the daily no
 5. Foam will now automatically a markdown file for today. For formatting, feel free to refer to the [[intro-to-notes#Markdown tips and tricks]]
     - ![](../supporting_files/images/intro-to-notes/20240731165058.png)
     - Make sure to save every so often, as VS will cache the file. If you sync with OneDrive, your notes won't be uploaded if you do not save
+6. By default the vs-dev profile puts all notes in the 00-dev-log folder. If the folder does not exist, it will auto create it
 
 ## Foam tips and tricks
 - These are not the only tips and tricks, refer to the documentation for other [features](https://foambubble.github.io/foam/#features)
@@ -56,7 +57,7 @@ Foam is works with markdown. One of the features I use regularly is the daily no
 
 ## Markdown tips and tricks
 - Pasting images
-  - The setting in this profile has been configured to automatically will paste the image within the following path: `${workspaceRoot}/supporting_files/images/${fileBasenameNoExtension`. If the subfolders do not exist, it will create a new folder. 
+  - The setting in this profile has been configured to automatically will paste the image within the following path: `${workspaceRoot}/00-supporting-files/images/${fileBasenameNoExtension`. If the subfolders do not exist, it will create a new folder. 
     - Note: change `${workspaceRoot}` if you want images to be posted elsewhere. When drafting this, I opened the specific subfolder as my workspace using VS.
 - Refer to the [original page](https://daringfireball.net/projects/markdown/)
 - ### Headers
