@@ -2,8 +2,8 @@
 ## Downloads
 * [Visual Studio Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
     * C++ compiler for package building
-* [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Miniforge](https://github.com/conda-forge/miniforge)
-    * our main way of interacting with python, a minimal version of anaconda, if we don't have enterprise licensing with Anaconda, we really should use miniforge instead
+* [UV](https://docs.astral.sh/uv/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Miniforge](https://github.com/conda-forge/miniforge)
+    * UV our main way of interacting with python, since we don't have enterprise licensing with Anaconda, alteratively miniforge
 * [VSCodium](https://vscodium.com/) OR [VSCode](https://code.visualstudio.com/)
     * our IDE. I prefer VSCodium as it [removes the telemetry and has binaries licensed under the  MIT license](https://vscodium.com/#why) microsoft adds. You might prefer VSCode as it has github copilot chat.
 
@@ -19,13 +19,29 @@
     3. Install to the default directory, then click next
     4. within the advanced options, make sure `Register Miniforge as the System Python3.X`
     5. Complete the installation
-4. Install VSCodium
-    1. Accept the licensing terms
-    2. within the `Select Additional Tasks` tab, make sure the following is selected:
-        * `Add "Open with VSCodium" action to Windows Explorer file context menu`
-        * `Add "Open with VSCodium" action to Windows Explorer directory context menu`
-        * `Add to PATH (requires shell restart)`
-    3. Continue to the next step
+4. Install python
+   - Miniforge/Miniconda
+       1. Accept the licensing terms
+       2. within the `Select Additional Tasks` tab, make sure the following is selected:
+           * `Add "Open with VSCodium" action to Windows Explorer file context menu`
+           * `Add "Open with VSCodium" action to Windows Explorer directory context menu`
+           * `Add to PATH (requires shell restart)`
+       3. Continue to the next step
+   - UV
+     1. Navigate to the following [Getting started page](https://docs.astral.sh/uv/#getting-started)
+     2. Run the installer script for your platform
+     3. Initialize or build your project
+        - If you are working on a new project, run `uv init $project_name`
+          - replace `$project_name` with a directory name
+        - If you have been given a project with a `pyproject.toml`, run `uv sync` within the same directory as the `pyproject.toml` file
+     4. If vscode/jupyter python interpreter to the`.venv` created by uv
+         - When using notebooks make sure to select the local .venv for your python interpreter
+            1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
+            2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
+            3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+     5. Install or declare your UV dependencies
+         - instead of `pip install $package_name` you run `uv add $package_name`. Use the `uv add` when possible as it will automatically update the `pyproject.toml`
+         - a sample file has been provided in
 5. Launch VSCodium
     1. Navigate to the extensions tab (Ctrl + Shift + X)
     2. Within the search tab search for python, select it and install it
