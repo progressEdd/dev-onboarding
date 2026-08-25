@@ -15,6 +15,7 @@
     3. Run through the installation
 3. Set up your python environment
    - Follow the [Setting up python environments](../03-python-environments/python-virtual-environments.md) guide, which covers installing and managing environments with UV (recommended), miniforge/conda, and poetry
+   - Complete this before step 5, the editor's `Conda Path` setting needs your python installation in place. You'll return here afterwards to finish configuring the editor
 4. Configure uv to use system certificates
    - by default uv ships with its own bundled Mozilla root certificates. Behind corporate proxies and SSL inspection (e.g. zscaler), set `UV_SYSTEM_CERTS=true` so uv loads TLS certificates from your platform's native certificate store instead (requires uv 0.11.0 or later)
    - Windows (powershell)

@@ -1,5 +1,5 @@
 # Setting up python environments
-This guide assumes that VSCode/VSCodium has been installed to your system
+This guide continues from step 3 of the [vs-codium-setup](../01-environment-setup/vs-codium-setup.md) guide. The commands work in any terminal, though some steps reference the VS Code/Codium integrated terminal and python interpreter
 
 ## Installing UV
 1. Navigate to the following [Getting started page](https://docs.astral.sh/uv/#getting-started)
