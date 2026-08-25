@@ -1,6 +1,6 @@
 # dev-onboarding
 ## Background
-Welcome to this repository! I created this repo initially to recall how I configured my own development environment. As I onboard junior developers to python GenAI projects, I realized that the pages I created would also be helpful to refer people to. The intended audience has a beginner to intermediate python development experience.
+Welcome to this repository! I created this repo initially to recall how I configured my own development environment. As I onboard junior developers to python GenAI projects, I realized that the pages I created would also be helpful to refer people to. The intended audience has a beginner to intermediate python development experience. Many of the files in this repo have been edited and created with the help of AI assistants, always reviewed by me before being merged.
 
 Feel free to report any issues on the [issues tab](https://github.com/progressEdd/dev-onboarding/issues)
 
@@ -21,3 +21,10 @@ Day-to-day workflows for contributing code and taking notes.
 ### 03-python-environments
 Python environment setup with UV (recommended), miniforge/conda, and poetry. Followed midway through vs-codium-setup, before the editor configuration steps.
 - [python-virtual-environments.md](03-python-environments/python-virtual-environments.md) — Creating and managing python environments
+
+## Note on AI-assisted coding
+Just like this repo, day-to-day development increasingly involves AI assistants. A few habits that keep it useful
+- Treat the assistant as a collaborator, not an oracle. Ask it to explain anything you don't understand, the same way you'd ask a senior
+- Validate suggestions using the internet, official documentation, or your seniors before relying on them
+- You own what you merge. Review every change, commit deliberately, and use git history as your safety net (see [intro-to-git](02-dev-workflows/intro-to-git.md))
+- If a term or instruction isn't clear, copy the section into a chat with an LLM and ask for a deeper explanation. That's how parts of these guides were written
