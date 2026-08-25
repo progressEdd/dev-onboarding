@@ -1,5 +1,5 @@
 # Setting up python environments
-This guide assumes that VSCode/VSCodium has been installed to your system
+This guide continues from step 3 of the [vs-codium-setup](../01-environment-setup/vs-codium-setup.md) guide. The commands work in any terminal, though some steps reference the VS Code/Codium integrated terminal and python interpreter
 
 ## Installing UV
 1. Navigate to the following [Getting started page](https://docs.astral.sh/uv/#getting-started)
@@ -15,7 +15,7 @@ This guide assumes that VSCode/VSCodium has been installed to your system
        3. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152621.png)
 5. Install or declare your UV dependencies
     - instead of `pip install $package_name` you run `uv add $package_name`. Use the `uv add` when possible as it will automatically update the `pyproject.toml`
-    - a sample file has been provided in [`pyproject.toml`](../python-environments/pyproject.toml) 
+    - a sample file has been provided in [`pyproject.toml`](../03-python-environments/pyproject.toml) 
 
 ## Installing Miniforge (windows)
 These steps walk through the windows installer. Miniforge is the conda distribution we use as an alternative to UV, since we don't have enterprise licensing with Anaconda. Once installed, see [Installing poetry within a conda environment](#installing-poetry-within-a-conda-environment) to use it.

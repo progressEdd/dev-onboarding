@@ -1,5 +1,5 @@
 # Taking Notes with VS Codium/Code
-If you followed the instructions from setting up your development environment [[VSCodium-VSCode-environments]], Foam will be installed on your vs profile. This document will introduce you to the basics of Foam and markdown for a better personal knowledge management.
+If you followed the instructions from setting up your development environment [[vs-codium-setup]], Foam will be installed on your vs profile. This document will introduce you to the basics of Foam and markdown for a better personal knowledge management.
 
 ## What note taking extensions have been installed?
 - [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
@@ -37,18 +37,18 @@ Foam is works with markdown. One of the features I use regularly is the daily no
 - Use wiki links `[[$your_file_name_here]]` to backlink to other notes
   - For illustration, if you start by typing `[[]]`, the list of files, within the folder, will appear as suggestions with previews
     - ![](../00-supporting-files/images/intro-to-notes/20240731170256.png)
-  - For example: when I typed in `[[VSCodium-VSCode-environments]]`
-    - [[VSCodium-VSCode-environments]] will link back to the file `VSCodium-VSCode-environments`
+  - For example: when I typed in `[[vs-codium-setup]]`
+    - [[vs-codium-setup]] will link back to the file `vs-codium-setup`
       - This is the raw code 
 - Use wiki links and headings `![[$your_file_name_here#section_title]]` to embed other notes
-  - For example: when I type `![[VSCodium-VSCode-environments#Steps]]` 
+  - For example: when I type `![[vs-codium-setup#Steps]]` 
     - The output will look like this: make sure to enable the VS preview ()
       - preview
          - windows: `Ctrl` + `Shift` + `v`
          - mac: `command` + `shift` + `v` 
       - screenshot
         - ![](../00-supporting-files/images/intro-to-notes/20240731170953.png)
-      - ![[VSCodium-VSCode-environments#Steps]]
+      - ![[vs-codium-setup#Steps]]
 - As you build out your notes, foam will create a graph for all note references
   - Toggle the command palette and type in `foam show `
     - ![](../00-supporting-files/images/intro-to-notes/20240731172130.png)

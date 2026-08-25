@@ -14,7 +14,8 @@
     2. within `Workloads`, select C++ Buildtools
     3. Run through the installation
 3. Set up your python environment
-   - Follow the [Setting up python environments](../python-environments/python-virtual-environments.md) guide, which covers installing and managing environments with UV (recommended), miniforge/conda, and poetry
+   - Follow the [Setting up python environments](../03-python-environments/python-virtual-environments.md) guide, which covers installing and managing environments with UV (recommended), miniforge/conda, and poetry
+   - Complete this before step 5, the editor's `Conda Path` setting needs your python installation in place. You'll return here afterwards to finish configuring the editor
 4. Configure uv to use system certificates
    - by default uv ships with its own bundled Mozilla root certificates. Behind corporate proxies and SSL inspection (e.g. zscaler), set `UV_SYSTEM_CERTS=true` so uv loads TLS certificates from your platform's native certificate store instead (requires uv 0.11.0 or later)
    - Windows (powershell)
@@ -49,7 +50,7 @@
     3. After the python extension is installed, navigate to your VSCodium Settings (Ctrl + ,)
     4. Find extensions section of settings, select it, and find python, select it
     5. Within the python section, look for `Conda Path`, set it to be the path to your installation of miniconda. For me it was `C:\Users\$USERNAME\Miniconda3` replace `$USERNAME` with the username with your username
-    6. Import the [vs-dev](/development-environments/vs-dev.code-profile) code profile. This will load the same extensions I use
+    6. Import the [vs-dev](/01-environment-setup/vs-dev.code-profile) code profile. This will load the same extensions I use
 
 ## Additional debugging
 
