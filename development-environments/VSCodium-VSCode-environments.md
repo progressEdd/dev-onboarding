@@ -13,35 +13,36 @@
     1. Once it finishes, run it, during the setup you'll reach a tab called `Workloads`
     2. within `Workloads`, select C++ Buildtools
     3. Run through the installation
-3. Install Miniforge
-    1. Agree to the licensing terms
-    2. within the install options, Select `Just Me (recommended)`, then click next
-    3. Install to the default directory, then click next
-    4. within the advanced options, make sure `Register Miniforge as the System Python3.X`
-    5. Complete the installation
-4. Install python
-   - Miniforge/Miniconda
-       1. Accept the licensing terms
-       2. within the `Select Additional Tasks` tab, make sure the following is selected:
-           * `Add "Open with VSCodium" action to Windows Explorer file context menu`
-           * `Add "Open with VSCodium" action to Windows Explorer directory context menu`
-           * `Add to PATH (requires shell restart)`
-       3. Continue to the next step
-   - UV
-     1. Navigate to the following [Getting started page](https://docs.astral.sh/uv/#getting-started)
-     2. Run the installer script for your platform
-     3. Initialize or build your project
-        - If you are working on a new project, run `uv init $project_name`
-          - replace `$project_name` with a directory name
-        - If you have been given a project with a `pyproject.toml`, run `uv sync` within the same directory as the `pyproject.toml` file
-     4. If vscode/jupyter python interpreter to the`.venv` created by uv
-         - When using notebooks make sure to select the local .venv for your python interpreter
-            1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-            2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-            3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
-     5. Install or declare your UV dependencies
-         - instead of `pip install $package_name` you run `uv add $package_name`. Use the `uv add` when possible as it will automatically update the `pyproject.toml`
-         - a sample file has been provided in
+3. Set up your python environment
+   - Follow the [Setting up python environments](../python-environments/python-virtual-environments.md) guide, which covers installing and managing environments with UV (recommended), miniforge/conda, and poetry
+4. Configure uv to use system certificates
+   - by default uv ships with its own bundled Mozilla root certificates. Behind corporate proxies and SSL inspection (e.g. zscaler), set `UV_SYSTEM_CERTS=true` so uv loads TLS certificates from your platform's native certificate store instead (requires uv 0.11.0 or later)
+   - Windows (powershell)
+     1. Run the following command
+        ``` powershell
+        [System.Environment]::SetEnvironmentVariable("UV_SYSTEM_CERTS", "true", "User")
+        ```
+     2. Restart your terminal for the change to take effect
+   - macOS (zsh)
+     1. Add the export to your `~/.zshrc`
+        ``` bash
+        echo 'export UV_SYSTEM_CERTS=true' >> ~/.zshrc
+        ```
+     2. Reload your shell
+        ``` bash
+        source ~/.zshrc
+        ```
+   - Linux (bash)
+     1. Add the export to your `~/.bashrc`
+        ``` bash
+        echo 'export UV_SYSTEM_CERTS=true' >> ~/.bashrc
+        ```
+     2. Reload your shell
+        ``` bash
+        source ~/.bashrc
+        ```
+   - fish shell
+     - run `set -Ux UV_SYSTEM_CERTS true` to set it as a universal variable, it will persist across sessions
 5. Launch VSCodium
     1. Navigate to the extensions tab (Ctrl + Shift + X)
     2. Within the search tab search for python, select it and install it
@@ -49,7 +50,10 @@
     4. Find extensions section of settings, select it, and find python, select it
     5. Within the python section, look for `Conda Path`, set it to be the path to your installation of miniconda. For me it was `C:\Users\$USERNAME\Miniconda3` replace `$USERNAME` with the username with your username
     6. Import the [vs-dev](/development-environments/vs-dev.code-profile) code profile. This will load the same extensions I use
-6. (optional) Import system certificates (windows)
+
+## Additional debugging
+
+* (optional) Import system certificates (windows)
    - the following instructions are to resolve errors when installing pip and conda packages such as
      - ```
         [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))
@@ -134,8 +138,6 @@
                    global.cert='C:\Users\$USERNAME\AppData\Local\miniforge3\lib\site-packages\certifi\cacert.pem' 
                    ```
 
-
-## Additional debugging
 * requests is throwing certificate errors
     ```
     requests.exceptions.SSLError: HTTPSConnectionPool(host='www.google.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))

@@ -21,14 +21,14 @@ Foam is works with markdown. One of the features I use regularly is the daily no
     - windows: `Ctrl` + `Shift` + `p`
     - mac: `command` + `shift` + `p`
 2. The following command palette will be pulled up
-    - ![](../supporting_files/images/intro-to-notes/20240731163500.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731163500.png)
 3. Within the menu, type the following: `open daily `
-    - ![](../supporting_files/images/intro-to-notes/20240731163637.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731163637.png)
       - if you see this prompt, hit the `Enter` / `return`key
 4. You will now be prompted to select the day's notes. Select Today's note
-    - ![](../supporting_files/images/intro-to-notes/20240731164643.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731164643.png)
 5. Foam will now automatically a markdown file for today. For formatting, feel free to refer to the [[intro-to-notes#Markdown tips and tricks]]
-    - ![](../supporting_files/images/intro-to-notes/20240731165058.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731165058.png)
     - Make sure to save every so often, as VS will cache the file. If you sync with OneDrive, your notes won't be uploaded if you do not save
 6. By default the vs-dev profile puts all notes in the `00-dev-log folder`. If the folder does not exist, it will auto create it
 
@@ -36,7 +36,7 @@ Foam is works with markdown. One of the features I use regularly is the daily no
 - These are not the only tips and tricks, refer to the documentation for other [features](https://foambubble.github.io/foam/#features)
 - Use wiki links `[[$your_file_name_here]]` to backlink to other notes
   - For illustration, if you start by typing `[[]]`, the list of files, within the folder, will appear as suggestions with previews
-    - ![](../supporting_files/images/intro-to-notes/20240731170256.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731170256.png)
   - For example: when I typed in `[[VSCodium-VSCode-environments]]`
     - [[VSCodium-VSCode-environments]] will link back to the file `VSCodium-VSCode-environments`
       - This is the raw code 
@@ -47,13 +47,13 @@ Foam is works with markdown. One of the features I use regularly is the daily no
          - windows: `Ctrl` + `Shift` + `v`
          - mac: `command` + `shift` + `v` 
       - screenshot
-        - ![](../supporting_files/images/intro-to-notes/20240731170953.png)
+        - ![](../00-supporting-files/images/intro-to-notes/20240731170953.png)
       - ![[VSCodium-VSCode-environments#Steps]]
 - As you build out your notes, foam will create a graph for all note references
   - Toggle the command palette and type in `foam show `
-    - ![](../supporting_files/images/intro-to-notes/20240731172130.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731172130.png)
   - The following graph will pop up
-    - ![](../supporting_files/images/intro-to-notes/20240731173110.png)
+    - ![](../00-supporting-files/images/intro-to-notes/20240731173110.png)
 
 ## Markdown tips and tricks
 - Pasting images

@@ -10,12 +10,21 @@ This guide assumes that VSCode/VSCodium has been installed to your system
    - If you have been given a project with a `pyproject.toml`, run `uv sync` within the same directory as the `pyproject.toml` file
 4. If vscode/jupyter python interpreter to the`.venv` created by uv
     - When using notebooks make sure to select the local .venv for your python interpreter
-       1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-       2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-       3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+       1. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152533.png)
+       2. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152602.png)
+       3. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152621.png)
 5. Install or declare your UV dependencies
     - instead of `pip install $package_name` you run `uv add $package_name`. Use the `uv add` when possible as it will automatically update the `pyproject.toml`
     - a sample file has been provided in [`pyproject.toml`](../python-environments/pyproject.toml) 
+
+## Installing Miniforge (windows)
+These steps walk through the windows installer. Miniforge is the conda distribution we use as an alternative to UV, since we don't have enterprise licensing with Anaconda. Once installed, see [Installing poetry within a conda environment](#installing-poetry-within-a-conda-environment) to use it.
+1. Run the [Miniforge](https://github.com/conda-forge/miniforge) installer
+    1. Agree to the licensing terms
+    2. within the install options, Select `Just Me (recommended)`, then click next
+    3. Install to the default directory, then click next
+    4. within the advanced options, make sure `Register Miniforge as the System Python3.X`
+    5. Complete the installation
 
 ## Installing poetry following the developer's best practices
 1. install pyenv
@@ -268,9 +277,9 @@ This guide assumes that VSCode/VSCodium has been installed to your system
        - note: the `--no-root` flag will just install the required packages and avoid building the packages 
    3. wait for the packages to install
    4. When using notebooks make sure to select the local .venv for your python interpreter
-       1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-       2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-       3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+       1. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152533.png)
+       2. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152602.png)
+       3. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152621.png)
    5. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
 
 ## Installing poetry within a conda environment
@@ -303,9 +312,9 @@ This guide assumes that VSCode/VSCodium has been installed to your system
     - note: the `--no-root` flag will just install the required packages and avoid building the packages 
 7. wait for the packages to install
 8. When using notebooks make sure to select the local .venv for your python interpreter
-    1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-    2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-    3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+    1. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152533.png)
+    2. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152602.png)
+    3. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152621.png)
 9. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
 
 ## Installing in your base environment
@@ -325,9 +334,9 @@ Follow these instructions to use poetry on your base environment.
     ```
 5. Wait for the packages to install
 6. When using notebooks make sure to select the local .venv for your python interpreter
-    1. ![](../supporting_files/images/python-virtual-environments/edits/20240626152533.png)
-    2. ![](../supporting_files/images/python-virtual-environments/edits/20240626152602.png)
-    3. ![](../supporting_files/images/python-virtual-environments/edits/20240626152621.png)
+    1. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152533.png)
+    2. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152602.png)
+    3. ![](../00-supporting-files/images/python-virtual-environments/edits/20240626152621.png)
 7. When using python or streamlit commands, make sure to activate the `poetry shell` to let the terminal know you want to use the python within the `.venv` folder
 
 

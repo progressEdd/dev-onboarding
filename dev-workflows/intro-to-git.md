@@ -23,11 +23,11 @@ Before running any of the commands within this workflow, please ensure that git 
         ```
       - Replace the url (https://github.com/progressEdd/dev-onboarding.git) with either the `HTTPS` or `SSH` options
         - You can find it within the code tab of Github or Gitlab
-          - ![](../supporting_files/images/intro-to-git/20240725154324.png)
+          - ![](../00-supporting-files/images/intro-to-git/20240725154324.png)
 2. Checkout a branch
     1. Within the terminal that has cloned the repo, navigate to the newly cloned repo folder using the `cd $repo-folder` command. Replace `$repo-folder` with the newly cloned folder
     2. Within the folder run `git branch` to get the available branches
-      - ![](../supporting_files/images/intro-to-git/20240725155237.png)
+      - ![](../00-supporting-files/images/intro-to-git/20240725155237.png)
       - The output will show the available branches to select from. 
     3. Select the branch you wish to work with run the following command
         ```
@@ -83,7 +83,7 @@ Before running any of the commands within this workflow, please ensure that git 
       - Replace `$branch-name` with the name of the current branch. Note: some repositories will restrict pushing to the master/main (repo home page)
 6. Submit Pull Requests for review
   - When git has successfully pushed to a repo, you'll be prompted to create a pull request with a link. You can open the link or select the from the pull requests tab on the repo. If your push is recent, you can also click on the `Compare & pull request` The interface will vary for each website
-    - ![](../supporting_files/images/intro-to-git/20240725163342.png)
+    - ![](../00-supporting-files/images/intro-to-git/20240725163342.png)
   - Follow the steps in open a pull request tab. Some organizations will require a review and sign off from an admin
 7. Merge changes from remote
   - If your pull request is accepted, you'll need to update your local repo with the latest. Run the following commands
@@ -96,6 +96,45 @@ Before running any of the commands within this workflow, please ensure that git 
        git pull
        ```
         - git pull will grab the remote changes and attempt to merge it into your current branch. If you just wish to get updates, a `git fetch` will cache the new changes. You'll need to `checkout` to the individual branches and `merge` it with the cached updates. 
+
+## Working with worktrees
+When you need to work on multiple branches at the same time, `git worktree` lets you check out several branches simultaneously in separate directories, all sharing the same repository history. Instead of constantly stashing changes and switching branches, each worktree is its own working directory linked to the same repo. For example, you can keep a feature branch open in one editor window while reviewing or hotfixing `main` in another.
+
+1. Create a new worktree
+    - Worktrees can live in any folder outside your current working directory. A common convention is a dedicated folder at the repo root. For an existing branch, run
+        ```
+        git worktree add $worktree-dir/$branch-name $branch-name
+        ```
+        - Replace `$worktree-dir` with the folder where you want the new working directory to be created (for example `../worktrees`), and both `$branch-name` values with the name of the branch you wish to check out. The first is the folder where the working directory will be created, and the second is the branch itself
+    - For a new branch, add the `-b` flag, similar to `git checkout -b`
+        ```
+        git worktree add $worktree-dir/$new-branch -b $new-branch
+        ```
+        - This creates the branch and checks it out in the new worktree in one step. The new branch is based on your currently checked out branch
+    - You can also base the new branch on a different branch by adding it as the final argument
+        ```
+        git worktree add $worktree-dir/$new-branch -b $new-branch $source-branch
+        ```
+        - Replace `$source-branch` with the branch you wish to fork from
+2. List all worktrees
+    - Run
+        ```
+        git worktree list
+        ```
+        - This shows all working directories attached to the repository, including the main one
+3. Work within the worktree
+    - Open the worktree folder in your editor and treat it like any other checkout. Commits, pushes, and pulls work the same as in the common workflow above
+4. Remove a worktree
+    - When you're done with a branch, clean up the worktree by running
+        ```
+        git worktree remove $worktree-dir/$branch-name
+        ```
+        - Make sure any work is committed and merged before removing
+
+A few things to keep in mind
+- Each worktree has its own working directory, but they all share the same git history
+- Worktree directories themselves are not tracked in git, so a shared worktrees folder usually only keeps a `README.md` describing its conventions
+- The same branch cannot be checked out in two worktrees at once
 
 ## Terminology
 
@@ -115,6 +154,7 @@ Before running any of the commands within this workflow, please ensure that git 
   - `merge`: A git parameter used to combine multiple sequences of commits into one unified history. It typically integrates changes from a different branch into your current branch.
   - `rebase`: A git parameter used to move or combine a sequence of commits to a new base commit. This can be used to synchronize a feature branch with an upstream branch.
     - `upstream`: The main repository that is considered the central repository from which to pull updates. It’s usually the repository from which your local repository was cloned.
+  - `worktree`: A git parameter used to manage multiple working directories attached to the same repository. It allows you to have several branches checked out simultaneously without switching between them.
   - `stash`: A git parameter used to temporarily save changes you don't want to commit immediately. It allows you to clean your working directory without committing.
   - `status`: A git command used to display the state of the working directory and the staging area. It shows which changes have been staged, which haven't, and which files aren't being tracked by git.
   - `diff`: A git parameter used to show the differences between commits, commit and working tree, etc.
