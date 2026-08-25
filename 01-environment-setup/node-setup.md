@@ -7,9 +7,9 @@ Some projects use JavaScript/TypeScript tooling (web frontends, notebook extensi
         1. We will use [nvm](https://github.com/nvm-sh/nvm) (node version manager), which lets you install and switch between multiple node versions per project, similar to pyenv for python
         2. Run the following in your terminal
             ``` bash
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh | bash
             ```
-            - check the [nvm releases page](https://github.com/nvm-sh/nvm/releases) for the latest version and update `v0.40.3` in the url if a newer one is available
+            - check the [nvm releases page](https://github.com/nvm-sh/nvm/releases) for the latest version and update `v0.40.7` in the url if a newer one is available
         3. Restart your terminal, or reload your shell config
             ``` bash
             source ~/.bashrc
