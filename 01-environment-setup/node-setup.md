@@ -1,45 +1,44 @@
 # Installing Node.js, npm, and Bun
-Some projects use JavaScript/TypeScript tooling (web frontends, notebook extensions, build tools), which needs a Node.js runtime. This guide covers installing Node with nvm (recommended, the node equivalent of pyenv), the npm package manager that ships with it, and Bun as an optional faster alternative.
+Some projects use JavaScript/TypeScript tooling (web frontends, notebook extensions, build tools), which needs a Node.js runtime. This guide covers installing node directly along with npm, the package manager that ships with it, and Bun as an optional faster alternative.
 
 ## Steps
-1. Install nvm
-    - nvm lets you switch between multiple node versions per project, similar to pyenv for python
-    - macOS/Linux
-        1. Run the following in your terminal
-            ``` bash
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+1. Install node
+    - Windows
+        1. Download the LTS (long term support) installer from the [nodejs download page](https://nodejs.org/en/download) and run it
+        2. Alternatively, install it with winget
+            ``` powershell
+            winget install OpenJS.NodeJS.LTS
             ```
-        2. Restart your terminal, or reload your shell config
-            ``` bash
-            source ~/.bashrc
+        3. Open a new terminal and verify the installation, npm installs alongside node
+            ``` powershell
+            node -v
+            npm -v
             ```
-            - if you use zsh, reload `~/.zshrc` instead
+    - macOS
+        1. Download the LTS installer from the [nodejs download page](https://nodejs.org/en/download) and run it
+        2. Alternatively, install it with homebrew
+            ``` bash
+            brew install node
+            ```
         3. Verify the installation
             ``` bash
-            nvm --version
+            node -v
+            npm -v
             ```
-    - Windows
-        1. Windows uses a separate project, [nvm-windows](https://github.com/coreybutler/nvm-windows). Download and run the latest `nvm-setup.exe` from the [releases page](https://github.com/coreybutler/nvm-windows/releases)
-        2. Verify the installation in a new terminal
-            ``` powershell
-            nvm version
+    - Linux
+        1. Add the NodeSource repository and install node
+            ``` bash
+            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+            sudo apt-get install -y nodejs
             ```
-2. Install node
-    1. Run the following command to install the latest long term support (LTS) release
-        ```
-        nvm install --lts
-        ```
-    2. Tell nvm to use it
-        ```
-        nvm use --lts
-        ```
-    3. Verify node and npm (npm installs alongside node)
-        ```
-        node -v
-        npm -v
-        ```
-    - To install a different version later, run `nvm install $version` then `nvm use $version`. Replace `$version` with the version you need, for example `22`
-3. (optional) Install Bun
+            - For distributions that don't use `apt`, refer to the [NodeSource instructions](https://github.com/nodesource/distributions)
+        2. Verify the installation
+            ``` bash
+            node -v
+            npm -v
+            ```
+    - Since node is installed directly, only one version is available at a time. To upgrade, download and run the installer for a newer release. If you find yourself needing to switch node versions between projects, look into a version manager like [nvm](https://github.com/nvm-sh/nvm), the node equivalent of pyenv
+2. (optional) Install Bun
     - [Bun](https://bun.sh/) is an all-in-one runtime, package manager, and test runner that is largely drop-in compatible with node and much faster than npm. It is not required, but some projects use it instead of npm
     - macOS/Linux
         ``` bash
