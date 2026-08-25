@@ -8,8 +8,9 @@ Feel free to report any issues on the [issues tab](https://github.com/progressEd
 The folders are numbered by the suggested reading order. [vs-codium-setup](01-environment-setup/vs-codium-setup.md) is the entry point for the whole setup and links out to the other guides partway through, so expect to jump between 01 and 03. Images and other supporting files live in [00-supporting-files](00-supporting-files).
 
 ### 01-environment-setup
-Setting up your editor and machine before writing any code.
-- [vs-codium-setup.md](01-environment-setup/vs-codium-setup.md) — Installing VSCode/VSCodium, its extensions, and importing the `vs-dev` code profile
+Setting up your editor, machine, and language runtimes before writing any code.
+- [vs-codium-setup.md](01-environment-setup/vs-codium-setup.md) — Installing VSCode/VSCodium, its extensions, and importing the `vs-dev` code profile. Entry point for the whole setup
+- [node-setup.md](01-environment-setup/node-setup.md) — Installing Node.js and npm with nvm, plus Bun as an optional alternative
 - [multiple-ssh.md](01-environment-setup/multiple-ssh.md) — Configuring multiple SSH keys for separate Git accounts (e.g. personal and work)
 
 ### 02-dev-workflows
